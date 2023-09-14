@@ -1,14 +1,16 @@
-import {MongoClient} from 'mongodb';
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-const url="mongodb://127.0.0.1:27017/Polling_System";
+dotenv.config();
+const url = process.env.URI;
+
 const connectWithDb = () => {
-    MongoClient.connect(url)
-              .then(client => {
-                  console.log("Mongodb is connected");
-              })
-              .catch(err => {
-                  console.log(err);
-        })
+    try{
+        mongoose.connect(url,{useUnifiedTopology:true,useNewUrlParser:true});
+        console.log("Database connected successfully");
+    }catch(err){
+        console.log("Error while comnnecting to the database",err);
+    }
 };
 
 export default connectWithDb;
