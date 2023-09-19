@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// create schema for question
 const questionSchema = new mongoose.Schema(
   {
     title: {
@@ -17,6 +18,7 @@ const questionSchema = new mongoose.Schema(
   }
 );
 
+// creating document model and export
 const Question = mongoose.model('Question', questionSchema);
 
 export default Question;

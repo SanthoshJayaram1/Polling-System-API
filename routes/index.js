@@ -7,7 +7,9 @@ const router = express.Router();
 
 
 router.get('/',home);
+// question router
 router.use('/questions',questionRouter);
+//option router
 router.use('/options',optionRouter);
 
 export default router;

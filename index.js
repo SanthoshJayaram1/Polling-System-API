@@ -3,6 +3,7 @@ import connectWithDb from "./config/mongoose.js";
 import router from "./routes/index.js";
 import dotenv from "dotenv";
 
+// env variables
 dotenv.config();
 const PORT = process.env.PORT;
 const app = express();

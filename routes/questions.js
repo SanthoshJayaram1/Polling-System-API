@@ -3,9 +3,13 @@ import {createQuestion,createOptions,deleteQuestion,viewQuestion} from "../contr
 
 const questionRouter = express.Router();
 
+// to create question
 questionRouter.post('/create',createQuestion);
+// to create options
 questionRouter.post('/:id/options/create',createOptions);
-questionRouter.delete('/:id/delete',deleteQuestion)
-questionRouter.get('/:id',viewQuestion)
+//to delete options
+questionRouter.delete('/:id/delete',deleteQuestion);
+// to view all questions
+questionRouter.get('/:id',viewQuestion);
 
 export default questionRouter;

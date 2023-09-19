@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// schema for options
 const optionSchema = new mongoose.Schema(
   {
     text: {
@@ -24,6 +25,7 @@ const optionSchema = new mongoose.Schema(
   }
 );
 
+// creating document model and export
 const Option = mongoose.model('Option', optionSchema);
 
 export default Option;
