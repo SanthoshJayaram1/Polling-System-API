@@ -4,10 +4,11 @@ import Question from '../models/question.js';
 // Delete an option
 export const deleteOption = async (req, res) => {
   try {
+        // get id of the option to be deleted from req.params
     const optionId = req.params.id;
-
+       // check which option this id belongs
     const option = await Option.findById(optionId);
-
+     // if not found sent 404 error
     if (!option) {
       return res.status(400).json({
         message: 'option not found',
@@ -44,10 +45,11 @@ export const deleteOption = async (req, res) => {
 // To increase the count of votes
 export const addVote = async (req, res) => {
   try {
+    // get option id from req.params
     const optionId = req.params.id;
-
+    // search for which option this id belongs
     const option = await Option.findById(optionId);
-
+  //if not found 
     if (!option) {
       return res.status(400).json({
         message: 'option not found',
